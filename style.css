@@ -1,0 +1,420 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Yu Gothic Medium", "游ゴシック medium",
+    YuGothic, "游ゴシック体","ヒラギノ角ゴ Pro W3", sans-serif;
+    background-image: url(bg.jpg);
+    background-size: 100%;
+    background-attachment: fixed; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Header Styling */
+header {
+    background-color: rgba(138, 184, 138, 0.658);
+    text-align: center;
+    padding: 20px;
+    color: #333;
+    width: 100%;
+}
+
+.sample{
+    border-radius: 35px;
+}
+
+.map-section {
+    margin: 20px auto;
+    text-align: center;
+    width: 100%;
+}
+
+.responsive-map {
+    width: 100%;
+    height: 400px; /* Default height */
+    border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    .responsive-map {
+        height: 300px; /* Adjust for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .responsive-map {
+        height: 250px; /* Adjust for phones */
+    }
+}
+
+
+
+header h1 {
+    font-size: 2.5em; /* Larger header font */
+    color: #ffffff; /* Darker green for main title */
+}
+.title h2 {
+    font-size: 2em; /* Larger header font */
+    text-align: center
+}
+
+.title p {
+    font-size: 1.2em;
+    color: #ffffff; /* Gray subtitle */
+}
+
+/* Main Card Section */
+.cards, .action-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 40px;
+    padding: 20px;
+    max-width: 100%;
+}
+
+
+.card {
+    width: 300px;
+    background-color: #E8F0E8; /* Card background color */
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Common button styling */
+.card-btn, .action-btn {
+    background-color: rgb(138, 184, 138); /* Dark green button */
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+
+.card-btn:hover, .action-btn:hover {
+    background-color: rgb(138, 184, 138); /* Darker green on hover */
+}
+
+/* Style for the file input to make it appear like a button */
+.file-input {
+    display: inline-block;
+    background-color: rgb(138, 184, 138);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.file-input:hover {
+    background-color: rgba(138, 184, 138, 0.705);
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    background-color: rgba(138, 184, 138, 0.9);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #ddf3f5;
+}
+
+.navbar button {
+    background: none;
+    color: white;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.navbar button:hover {
+    color: #ddf3f5; /* Light green on hover */
+}
+
+/* Horizontal layout for action container */
+.action-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: 20px auto;
+}
+
+.action-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 20px;
+    background-color: #8ab888;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.action-btn:hover {
+    background-color: #6c9a6c;
+}
+
+.results {
+    text-align: center;
+    margin: 20px auto;
+    padding: 20px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.8); /* Add semi-transparent white background */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .captured-photo {
+        max-width: 95%; /* Adjust for smaller devices */
+    }
+
+    .action-container {
+        gap: 5px;
+    }
+
+    .results {
+        font-size: 14px;
+    }
+}
+
+/* Styling for the photo gallery */
+.photo-gallery {
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.photo-gallery h2 {
+    color: #e4faeb1c;
+    margin-bottom: 10px;
+}
+
+.photo-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.photo-container::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Edge */
+}
+
+.captured-photo {
+    width: 200px; /* Fixed width for all images */
+    height: 200px; /* Fixed height for all images */
+    object-fit: cover; /* Ensures the image fits within the container without distortion */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 10px;
+}
+
+
+/* Styling for video element */
+#cameraFeed {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.photo-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 200px); /* Fixed column width */
+    gap: 15px; /* Space between photos */
+    justify-content: center;
+    padding: 20px;
+}
+
+.gallery-photo {
+    width: 200px; /* Fixed width for all photos */
+    height: 150px; /* Fixed height for all photos */
+    object-fit: cover; /* Ensures the image fits without distortion */
+    border-radius: 10px; /* Optional rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.photo-wrapper {
+    position: relative;
+    display: inline-block;
+    margin: 10px; /* Add space around the photo wrapper */
+}
+
+.cancel-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.cancel-button:hover {
+    background-color: darkred;
+}
+/* 投稿 button on the main page */
+.upload-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.upload-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* Popup styles for share buttons */
+.share-sns {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.share-sns a {
+    border: 1px solid #FF5722;
+    background-color: #fff;
+    color: #FF5722;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    transition: 0.3s;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.share-sns a:hover {
+    color: #fff;
+    background-color: #FF5722;
+}
+
+/* Image styling inside the popup */
+.share-sns img {
+    max-width: 100%;
+    margin-top: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+/*検索ボックス*/
+
+form, input {
+    margin: 0; /* マージンをリセット */
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+form input[type="search"] {
+    width: 90%;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #a4b89f;
+}
+
+form button {
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    background-color: #8ab888;
+    color: white;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #6c9a6c;
+}
+
+  .box{
+    display: flex;
+    justify-content: space-around;
+    gap: 40px;
+    padding: 40px;
+    max-width: 100%;
+  }
+
+  .boxes{
+
+    background-color: #E8F0E8; /* Card background color */
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .box-btn{
+    background-color: rgb(138, 184, 138); /* Dark green button */
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    width: 100%;
+    margin-top: 10px;
+    font-size: 1em;
+    position: center;
+}
+
+.resizephoto{
+    width: 500px;
+    height: 500px;
+}
+
+.logo {
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    height: 50px;
+    border-radius: 35px;
+    margin-top: 14px;
+
+}
+
+#results {
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    border-radius: 10px; /* Rounded corners */
+    padding: 15px; /* Add space inside the element */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for better visibility */
+    width: fit-content; /* Adjusts width to content */
+    margin: 10px auto; /* Center alignment with vertical spacing */
+}
